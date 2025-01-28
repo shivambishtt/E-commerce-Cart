@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { MdShoppingCart } from "react-icons/md";
+import ItemCard from './ItemCard';
 
 
 function Header() {
@@ -15,6 +16,7 @@ function Header() {
                     </span>
                 </div>
             </div>
+            <ItemCard />
         </>
     )
 }
