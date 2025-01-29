@@ -5,6 +5,7 @@ import { Bounce, ToastContainer } from "react-toastify"
 import { showToast } from "./toast.ts"
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../slice/cartSlice.ts'
+import { addToWishlist } from '../slice/wishListSlice.ts'
 
 
 function ItemCard() {
@@ -15,13 +16,13 @@ function ItemCard() {
     }
 
     return (
-        <div className='itemContainer my-10'>
+        <div className='itemContainer my-10 mx-10'>
             <h1 className='text-4xl font-bold'>Trusted Deals</h1>
 
-            <div className=' bg-gray-400 items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className=' bg-white items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
 
                 {productData.map((item) => {
-                    return <div className='p-4 rounded shadow-lg flex flex-col items-center' key={item.id} >
+                    return <div className='p-5 my-2 rounded shadow-lg shadow-stone-400 flex flex-col items-center' key={item.id} >
                         <img className='h-60' src={item.imageUrl} alt="headphone" />
                         <span>
                             <h1 className='text-xl font-semibold'>
@@ -32,7 +33,11 @@ function ItemCard() {
                             <p className='font-semibold text-xl'>{item.price} rs</p>
                         </span>
 
-                        <button className='bg-blue-500 text-white rounded p-1 my-1' onClick={() => handleAdd(item)}>Add to cart</button>
+                        <div className='flex items-center justify-between gap-4 mt-2 '>
+                            <button className='bg-orange-200 text-black rounded p-1' onClick={() => handleAdd(item)}>Add to cart</button>
+
+                            <button onClick={() => dispatch(addToWishlist(item))} className='bg-black text-white text-sm p-1 rounded'>Wishlist</button>
+                        </div>
                     </div>
                 })}
                 <ToastContainer transition={Bounce} closeOnClick={true} limit={1} />

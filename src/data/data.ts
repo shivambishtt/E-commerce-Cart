@@ -11,30 +11,35 @@ export const productData: ProductData[] = [
     id: 1,
     name: "Wireless Bluetooth Headphones",
     price: 4000,
-    imageUrl: headphones
+    imageUrl: headphones,
+    quantity: 0
   },
   {
     id: 2,
     name: "Smartphone with 128GB Storage",
     price: 15000,
-    imageUrl: smartphone
+    imageUrl: smartphone,
+    quantity: 0
   },
   {
     id: 3,
     name: "Laptop with 16GB RAM",
     price: 60000,
-    imageUrl: laptop
+    imageUrl: laptop,
+    quantity: 0
   },
   {
     id: 4,
     name: "Smartwatch with Heart Rate Monitor",
     price: 3000,
-    imageUrl: watch
+    imageUrl: watch,
+    quantity: 0
   },
   {
     id: 5,
     name: "Wireless Gaming Mouse",
     price: 2000,
-    imageUrl: mouse
+    imageUrl: mouse,
+    quantity: 0
   }
 ];

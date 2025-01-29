@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { store } from './store/store.ts'
 import CheckoutPage from './pages/CheckoutPage.tsx'
+import WishlistPage from './pages/WishlistPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/checkout",
-    element: <CheckoutPage/>
+    element: <CheckoutPage />
+  },
+  {
+    path: "/wishlist",
+    element: <WishlistPage />
   }
 ])
 

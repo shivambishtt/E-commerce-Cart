@@ -18,14 +18,16 @@ function Cart() {
             </div>
             <CartItems />
 
-            <NavLink to="/" >
-                {cartLength !== 0 ? <div className='flex items-center justify-between px-10 '>
-                    <p className='text-xl font-semibold'>Back to shop</p>
-                    <OrderSummary />
-                </div> : ""}
-            </NavLink>
 
-        </div>
+            {cartLength !== 0 ? <div className='flex items-center justify-between px-10 '>
+                <NavLink to="/" >
+                    <p className='text-2xl font-semibold'>Back to shop</p>
+                </NavLink>
+                <OrderSummary />
+            </div> : ""}
+
+
+        </div >
 
 
 
