@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProductData } from "../vite-env";
 
-interface CartState {
+export interface CartState {
     items: ProductData[]
 }
 
@@ -15,6 +15,7 @@ const cartSlice = createSlice({
     reducers: {
         addToCart: (state, action: PayloadAction<ProductData>) => {
             state.items.push(action.payload)
+
         },
         removeFromCart: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter((cartItem) => {

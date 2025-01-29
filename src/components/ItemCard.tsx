@@ -8,11 +8,9 @@ import { addToCart } from '../slice/cartSlice.ts'
 
 
 function ItemCard() {
-    // const [itemAdded, setItemAdded] = useState<{ [id: number]: boolean }>({})
     const dispatch = useDispatch()
-
-    const handleAdd = (item: any) => {
-        dispatch(addToCart(item.id))
+    const handleAdd = (item: ProductData) => {
+        dispatch(addToCart(item))
         showToast()
     }
 
@@ -22,7 +20,7 @@ function ItemCard() {
 
             <div className=' bg-gray-400 items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
 
-                {productData.map((item: ProductData) => {
+                {productData.map((item) => {
                     return <div className='p-4 rounded shadow-lg flex flex-col items-center' key={item.id} >
                         <img className='h-60' src={item.imageUrl} alt="headphone" />
                         <span>
@@ -31,12 +29,10 @@ function ItemCard() {
                             </h1>
                         </span>
                         <span>
-                            <p className='font-semibold text-xl'>{item.price}$</p>
+                            <p className='font-semibold text-xl'>{item.price} rs</p>
                         </span>
 
-                        <button className='bg-blue-500 text-white rounded p-1 my-1' onClick={() => handleAdd(item.id)}>Add to cart</button>
-                        {/* {!itemAdded[item.id] ?
-                            <button onClick={() => handleAdd(item.id)} className='bg-blue-500 text-white rounded p-1 my-1'>Add to cart</button> : <h1>Item added</h1>} */}
+                        <button className='bg-blue-500 text-white rounded p-1 my-1' onClick={() => handleAdd(item)}>Add to cart</button>
                     </div>
                 })}
                 <ToastContainer transition={Bounce} closeOnClick={true} limit={1} />

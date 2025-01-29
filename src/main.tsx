@@ -5,6 +5,7 @@ import Cart from "./pages/Cart.tsx"
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { store } from './store/store.ts'
+import CheckoutPage from './pages/CheckoutPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutPage/>
   }
 ])
 

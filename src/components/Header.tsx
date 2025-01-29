@@ -7,7 +7,7 @@ import { RootState } from '../store/store.ts';
 
 function Header() {
     const cartCount = useSelector((state: RootState) => {
-        return state.cart.items.length
+        return state.cart.items.length                                              
     })
     return (
         <>
