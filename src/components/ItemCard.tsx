@@ -5,8 +5,6 @@ import { Bounce, ToastContainer } from "react-toastify"
 import { showToast } from "./toast.ts"
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../slice/cartSlice.ts'
-import { addToWishlist } from '../slice/wishListSlice.ts'
-
 
 function ItemCard() {
     const dispatch = useDispatch()
@@ -36,7 +34,7 @@ function ItemCard() {
                         <div className='flex items-center justify-between gap-4 mt-2 '>
                             <button className='bg-orange-200 text-black rounded p-1' onClick={() => handleAdd(item)}>Add to cart</button>
 
-                            <button onClick={() => dispatch(addToWishlist(item))} className='bg-black text-white text-sm p-1 rounded'>Wishlist</button>
+                            <button className='bg-black text-white text-sm p-1 rounded'>Wishlist</button>
                         </div>
                     </div>
                 })}

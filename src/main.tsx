@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { store } from './store/store.ts'
 import CheckoutPage from './pages/CheckoutPage.tsx'
-import WishlistPage from './pages/WishlistPage.tsx'
+import Coupon from './components/Coupon.tsx'
 
 const router = createBrowserRouter([
   {
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
     element: <CheckoutPage />
   },
   {
-    path: "/wishlist",
-    element: <WishlistPage />
+    path: "/coupon",
+    element: <Coupon/>
   }
 ])
 

@@ -8,3 +8,9 @@ export type ProductData = {
   imageUrl: string,
   quantity: number
 }
+
+interface CouponState {
+  code: string,
+  discount: number,
+  isValid: boolean,
+}

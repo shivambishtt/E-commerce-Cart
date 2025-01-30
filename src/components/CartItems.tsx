@@ -9,7 +9,6 @@ import { removeFromCart, increaseQuantity, decreaseQuantity } from '../slice/car
 function CartItems() {
     const items = useSelector((state: RootState) => state.cart.items)
     const dispatch = useDispatch()
-
     return (
         <div>
             {items.length === 0 ? "" :
