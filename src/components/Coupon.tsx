@@ -27,7 +27,6 @@ function Coupon() {
             />
             <div className='flex justify-center items-center gap-2'>
                 <button
-                    disabled
                     onClick={handleApply}
                     className="bg-black text-white rounded p-1.5 mt-2 w-1/3"
                 >
