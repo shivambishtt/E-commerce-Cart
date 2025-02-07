@@ -3,13 +3,12 @@ import { productData } from "../data/data.ts"
 import { ProductData } from '../vite-env'
 import { Bounce, ToastContainer } from "react-toastify"
 import { showToast } from "./toast.ts"
-import { useDispatch } from 'react-redux'
-import { addToCart } from '../slice/cartSlice.ts'
+import useCartStore from "../zustand/store/cart.ts";
 
 function ItemCard() {
-    const dispatch = useDispatch()
+    const { addToCart } = useCartStore();
     const handleAdd = (item: ProductData) => {
-        dispatch(addToCart(item))
+        addToCart(item)
         showToast()
     }
 

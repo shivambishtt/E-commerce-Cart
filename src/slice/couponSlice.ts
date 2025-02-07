@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CouponState } from "../vite-env";
 
-
 const initialState: CouponState = {
     code: "",
     discount: 0,

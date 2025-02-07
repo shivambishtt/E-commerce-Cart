@@ -2,12 +2,14 @@ import React from 'react'
 import { MdCancel } from "react-icons/md";
 import { FaMinus } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa";
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../store/store.ts'
+import { useDispatch } from 'react-redux'
+// import { RootState } from '../store/store.ts'
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../slice/cartSlice.ts';
+import useCartStore from '../zustand/store/cart.ts';
 
 function CartItems() {
-    const items = useSelector((state: RootState) => state.cart.items)
+    const items= useCartStore((state)=>state.items)
+    // const items = useSelector((state: RootState) => state.cart.items)
     const dispatch = useDispatch()
     return (
         <div>

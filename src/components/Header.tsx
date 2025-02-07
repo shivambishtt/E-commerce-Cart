@@ -2,13 +2,12 @@ import React from 'react'
 import { MdShoppingCart } from "react-icons/md";
 import ItemCard from './ItemCard';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/store.ts';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../store/store.ts';
+import useCartStore from '../zustand/store/cart.ts';
 
 function Header() {
-    const cartCount = useSelector((state: RootState) => {
-        return state.cart.items.length
-    })
+    const cartCount = useCartStore((state) => state.items.length)
     return (
         <>
             <div className='headerContainer bg-stone-400 flex items-center justify-between px-4 h-25'>
